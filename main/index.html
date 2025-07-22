@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroGames - Unblocked Games 2016 Style</title>
+    <link rel="stylesheet" href="css/retro-style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- YouTube 2016 Style Header -->
+    <header class="youtube-header">
+        <div class="header-container">
+            <div class="header-left">
+                <button class="hamburger-menu" onclick="toggleSidebar()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo-container">
+                    <img src="https://via.placeholder.com/90x20/ff0000/ffffff?text=RetroGames" alt="RetroGames" class="logo">
+                </div>
+            </div>
+            
+            <div class="header-center">
+                <div class="search-container">
+                    <input type="text" placeholder="Search games..." class="search-input" id="searchInput">
+                    <button class="search-btn" onclick="searchGames()">
+                        <svg width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="upload-btn">Upload Game</button>
+                <div class="user-menu">
+                    <img src="https://via.placeholder.com/32x32/4285f4/ffffff?text=U" alt="User" class="user-avatar">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- YouTube 2016 Style Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <a href="#" class="sidebar-item active">
+                    <span class="sidebar-icon">🏠</span>
+                    <span class="sidebar-text">Home</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <span class="sidebar-icon">🔥</span>
+                    <span class="sidebar-text">Trending</span>
+                </a>
+                <a href="#" class="sidebar-item">
+                    <span class="sidebar-icon">⏰</span>
+                    <span class="sidebar-text">Recently Played</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-divider"></div>
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">GAME CATEGORIES</h3>
+                <a href="#" class="sidebar-item" onclick="filterGames('action')">
+                    <span class="sidebar-icon">⚔️</span>
+                    <span class="sidebar-text">Action</span>
+                </a>
+                <a href="#" class="sidebar-item" onclick="filterGames('puzzle')">
+                    <span class="sidebar-icon">🧩</span>
+                    <span class="sidebar-text">Puzzle</span>
+                </a>
+                <a href="#" class="sidebar-item" onclick="filterGames('racing')">
+                    <span class="sidebar-icon">🏎️</span>
+                    <span class="sidebar-text">Racing</span>
+                </a>
+                <a href="#" class="sidebar-item" onclick="filterGames('adventure')">
+                    <span class="sidebar-icon">🗺️</span>
+                    <span class="sidebar-text">Adventure</span>
+                </a>
+                <a href="#" class="sidebar-item" onclick="filterGames('multiplayer')">
+                    <span class="sidebar-icon">👥</span>
+                    <span class="sidebar-text">Multiplayer</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Roblox Style Banner -->
+        <section class="hero-banner">
+            <div class="banner-content">
+                <h1 class="banner-title">Welcome to RetroGames!</h1>
+                <p class="banner-subtitle">Play your favorite unblocked games with that classic 2016 feel</p>
+                <button class="cta-button">Start Playing Now</button>
+            </div>
+            <div class="banner-image">
+                <div class="roblox-character"></div>
+            </div>
+        </section>
+
+        <!-- Featured Games Section -->
+        <section class="games-section">
+            <h2 class="section-title">Featured Games</h2>
+            <div class="games-grid" id="gamesGrid">
+                <!-- Games will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterGames('action')">
+                    <div class="category-icon">⚔️</div>
+                    <h3>Action Games</h3>
+                    <p>Fast-paced adventures</p>
+                </div>
+                <div class="category-card" onclick="filterGames('puzzle')">
+                    <div class="category-icon">🧩</div>
+                    <h3>Puzzle Games</h3>
+                    <p>Brain teasers & logic</p>
+                </div>
+                <div class="category-card" onclick="filterGames('racing')">
+                    <div class="category-icon">🏎️</div>
+                    <h3>Racing Games</h3>
+                    <p>Speed & competition</p>
+                </div>
+                <div class="category-card" onclick="filterGames('adventure')">
+                    <div class="category-icon">🗺️</div>
+                    <h3>Adventure Games</h3>
+                    <p>Epic quests await</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay for sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
