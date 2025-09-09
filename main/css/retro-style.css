@@ -1,0 +1,557 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* YouTube 2016 Header Styles */
+.youtube-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    min-width: 169px;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    padding: 8px;
+    margin-right: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hamburger-menu span {
+    width: 18px;
+    height: 2px;
+    background: #606060;
+    transition: 0.3s;
+}
+
+.hamburger-menu:hover span {
+    background: #000;
+}
+
+.logo {
+    height: 20px;
+}
+
+.header-center {
+    flex: 1;
+    max-width: 728px;
+    margin: 0 40px;
+}
+
+.search-container {
+    display: flex;
+    height: 32px;
+}
+
+.search-input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 0 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #315efb;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.search-btn {
+    width: 64px;
+    background: #f8f8f8;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: #f0f0f0;
+}
+
+.search-btn svg {
+    fill: #333;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upload-btn {
+    background: #cc181e;
+    color: white;
+    border: none;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.upload-btn:hover {
+    background: #a91217;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* YouTube 2016 Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 56px);
+    background: #f5f5f5;
+    border-right: 1px solid #e5e5e5;
+    overflow-y: auto;
+    transform: translateX(-240px);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-content {
+    padding: 12px 0;
+}
+
+.sidebar-section {
+    margin-bottom: 8px;
+}
+
+.sidebar-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #909090;
+    padding: 8px 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    color: #030303;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.sidebar-item:hover {
+    background: #e5e5e5;
+}
+
+.sidebar-item.active {
+    background: #e5e5e5;
+    border-right: 3px solid #cc181e;
+    font-weight: 500;
+}
+
+.sidebar-icon {
+    width: 24px;
+    margin-right: 24px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background: #e5e5e5;
+    margin: 12px 0;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 56px);
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 56px;
+    margin-left: 0;
+    padding: 24px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Roblox Style Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, #00a2ff 0%, #0078d4 100%);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+}
+
+.banner-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.banner-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.banner-subtitle {
+    font-size: 20px;
+    margin-bottom: 24px;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: #00c851;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,200,81,0.3);
+}
+
+.cta-button:hover {
+    background: #00a841;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,200,81,0.4);
+}
+
+.banner-image {
+    flex: 0 0 200px;
+    height: 200px;
+    position: relative;
+}
+
+.roblox-character {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffeb3b, #ffc107);
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.roblox-character::before {
+    content: '🎮';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+}
+
+/* Games Section */
+.games-section, .categories-section {
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.game-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.game-thumbnail {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    position: relative;
+}
+
+.game-thumbnail::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00a2ff, #0078d4);
+}
+
+.game-info {
+    padding: 16px;
+}
+
+.game-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.game-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.game-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #999;
+}
+
+.game-category {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Categories Grid */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+.category-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.category-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.category-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-center {
+        margin: 0 16px;
+    }
+    
+    .hero-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px;
+    }
+    
+    .banner-title {
+        font-size: 32px;
+    }
+    
+    .banner-image {
+        margin-top: 24px;
+        flex: 0 0 150px;
+        height: 150px;
+    }
+    
+    .main-content {
+        padding: 16px;
+    }
+    
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 8px;
+    }
+    
+    .upload-btn {
+        display: none;
+    }
+    
+    .banner-title {
+        font-size: 24px;
+    }
+    
+    .banner-subtitle {
+        font-size: 16px;
+    }
+    
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-card, .category-card {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.game-card:nth-child(1) { animation-delay: 0.1s; }
+.game-card:nth-child(2) { animation-delay: 0.2s; }
+.game-card:nth-child(3) { animation-delay: 0.3s; }
+.game-card:nth-child(4) { animation-delay: 0.4s; }
+.game-card:nth-child(5) { animation-delay: 0.5s; }
+.game-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Classic Roblox Button Styles */
+.roblox-btn {
+    background: linear-gradient(to bottom, #00a2ff 0%, #0078d4 100%);
+    border: 2px solid #005a9e;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.roblox-btn:hover {
+    background: linear-gradient(to bottom, #0091e6 0%, #006bb8 100%);
+    border-color: #004d87;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.roblox-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
